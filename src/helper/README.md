@@ -25,11 +25,11 @@ ACRE_{train/val/test}_{6_digit_problem_idx}_{2_digit_panel_idx}
 
 ## Configuration File
 
-Each configuration file contains the concise scene representation for each panel. Important fields are:
+Each configuration file contains a concise scene representation for each panel. Important fields are:
 
 * light_state: on (activated), off (inactivated), or no (no blicket machine)
 * objects: a list of objects in the scene, denoted as a unique index in the shape-material-color combination space
-* label: the ground-truth answer to the query
+* label: the ground-truth answer to the query (0 for inactivated, 1 for undetermined, 2 for activated)
 * type: type of the query
 * ref: for interventional queries, it points to the original scene
 
