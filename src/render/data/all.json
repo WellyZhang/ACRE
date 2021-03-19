@@ -1,0 +1,15 @@
+{
+    "cube": {
+        "colors": ["gray", "red", "blue", "green", "brown", "purple", "cyan", "yellow"],
+        "materials": ["rubber", "metal"]
+    },
+    "cylinder": {
+        "colors": ["gray", "red", "blue", "green", "brown", "purple", "cyan", "yellow"],
+        "materials": ["rubber", "metal"]
+    },
+    "sphere": {
+        "colors": ["gray", "red", "blue", "green", "brown", "purple", "cyan", "yellow"],
+        "materials": ["rubber", "metal"]
+    }
+}
+  
