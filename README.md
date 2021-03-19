@@ -85,12 +85,12 @@ See ```src/render/render_images.py``` for a full list of arguments.
 
 Code to benchmark the dataset resides in ```src/baseline``` and ```src/neusym```. 
 
-The ```baseline``` folder contains code for neural networks. Supported models include CNN, LSTM, ResNet, WReN, LEN, MXGNet, and BERT (see ```src/baseline/__init__.py``). To run a model,
+The ```baseline``` folder contains code for neural networks. Supported models include CNN, LSTM, ResNet, WReN, LEN, MXGNet, and BERT. To run a model,
 ```
 python src/baseline/main.py --dataset <path/to/ACRE> --model <model name>
 ```
 
-The ```neusym``` folder contains code for neuro-symbolic models: RWModel, PCModel, NoTearsLinear, and NoTearsMLP (see ```src/neusym/__init__.py```). To run a model,
+The ```neusym``` folder contains code for neuro-symbolic models: RWModel, PCModel, NoTearsLinear, and NoTearsMLP. To run a model,
 ```
 python src/neusym/main.py --split <train/val/test> --config_folder <path/to/ACRE/config> --scene_folder <path/to/predicted/scene/files> --model <model name>
 ```
