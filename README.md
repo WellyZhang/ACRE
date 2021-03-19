@@ -105,7 +105,7 @@ If you find the paper and/or the code helpful, please cite us.
 
 ```
 @inproceedings{zhang2021acre,
-    title={Acre: Abstract causal reasoning beyond covariation},
+    title={ACRE: Abstract Causal REasoning Beyond Covariation},
     author={Zhang, Chi and Jia, Baoxiong and Edmonds, Mark and Zhu, Song-Chun and Zhu, Yixin},
     booktitle={Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
     year={2021}
