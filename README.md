@@ -54,7 +54,7 @@ Note that backward-block queries correspond to potential queries in the repo.
 Code to generate the dataset configurations resides in the ```src/dataset``` folder. To generate dataset configuration files for a split, run
 
 ```
-python src/dataset/blicket.py --regime <IID/Comp/SyS> ----output_dataset_dir <directory to save configuration files>
+python src/dataset/blicket.py --regime <IID/Comp/SyS> --output_dataset_dir <directory to save configuration files>
 ```
 
 ### Rendering
