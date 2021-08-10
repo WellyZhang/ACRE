@@ -92,7 +92,7 @@ python src/baseline/main.py --dataset <path/to/ACRE> --model <model name>
 
 The ```neusym``` folder contains code for neuro-symbolic models: RWModel, PCModel, NoTearsLinear, and NoTearsMLP. To run a model,
 ```
-python src/neusym/main.py --split <train/val/test> --config_folder <path/to/ACRE/config> --scene_folder <path/to/predicted/scene/files> --model <model name>
+python src/neusym/main.py --split <train/val/test> --config_folder <path/to/ACRE/config> --scenes_folder <path/to/predicted/scene/files> --model <model name>
 ```
 
 We use [Detectron 2](https://github.com/facebookresearch/detectron2) for scene parsing and code for this part is not included in the repo. 
