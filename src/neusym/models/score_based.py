@@ -53,7 +53,7 @@ class NoTearsLinear(BaseModel):
         Args:
             X (np.ndarray): [n, d] sample matrix
             lambda1 (float): l1 penalty parameter
-            loss_type (str): l2, logistic, poisson
+            loss_type (str): l2, l1, logistic, poisson
             max_iter (int): max num of dual ascent steps
             h_tol (float): exit if |h(w_est)| <= htol
             rho_max (float): exit if rho >= rho_max
@@ -69,6 +69,10 @@ class NoTearsLinear(BaseModel):
                 R = X - M
                 loss = 0.5 / X.shape[0] * (R ** 2).sum()
                 G_loss = - 1.0 / X.shape[0] * X.T @ R
+            elif loss_type == 'l1':
+                R = X - M
+                loss = np.abs(R).sum() / X.shape[0]
+                G_loss = - 1.0 / X.shape[0] * X.T @ np.sign(R)
             elif loss_type == 'logistic':
                 loss = 1.0 / X.shape[0] * (np.logaddexp(0, M) - X * M).sum()
                 G_loss = 1.0 / X.shape[0] * X.T @ (sigmoid(M) - X)
@@ -200,6 +204,11 @@ class NoTearsMLP(NoTearsLinear):
             n = target.shape[0]
             loss = 0.5 / n * torch.sum((output - target) ** 2)
             return loss
+        
+        def abs_loss(output, target):
+            n = target.shape[0]
+            loss = 1.0 / n * torch.sum(torch.abs(output - target))
+            return loss
 
         def log_loss(output, target):
             n = target.shape[0]
@@ -209,6 +218,8 @@ class NoTearsMLP(NoTearsLinear):
 
         if loss_type == "l2":
             loss_func = squared_loss
+        elif loss_type == "l1":
+            loss_func = abs_loss
         elif loss_type == "logistic":
             loss_func = log_loss
         else:
